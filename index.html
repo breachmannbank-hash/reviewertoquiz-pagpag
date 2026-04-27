@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Reviewer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">Study helper</p>
+        <h1>Text to Reviewer</h1>
+        <p class="subtitle">Paste reviewer text and generate 5 study questions with answers.</p>
+      </header>
+
+      <section class="panel input-panel" aria-labelledby="input-title">
+        <div class="section-heading">
+          <h2 id="input-title">Input area</h2>
+          <span id="connectionStatus" class="status">Checking connection...</span>
+        </div>
+
+        <label for="reviewerText">Reviewer text</label>
+        <textarea
+          id="reviewerText"
+          rows="12"
+          placeholder="Paste your reviewer text here..."
+        ></textarea>
+
+        <button id="generateBtn" type="button">Generate Questions</button>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel output-panel" aria-labelledby="output-title">
+        <div class="section-heading">
+          <h2 id="output-title">Output questions</h2>
+          <button id="clearBtn" class="secondary-btn" type="button">Clear saved</button>
+        </div>
+
+        <div id="questionsList" class="questions-list">
+          <p class="empty-state">Generated or saved questions will appear here.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

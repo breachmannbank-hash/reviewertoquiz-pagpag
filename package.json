@@ -1,0 +1,16 @@
+{
+  "name": "text-to-reviewer",
+  "version": "1.0.0",
+  "description": "Quasi-offline reviewer text to study questions app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.77.0"
+  }
+}
