@@ -18,16 +18,16 @@ app.post("/generate", async (req, res) => {
       return res.status(400).json({ error: "Reviewer text is required." });
     }
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!process.env.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) {
       return res.status(500).json({ error: "OPENAI_API_KEY is not set on the server." });
     }
 
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: process.env.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,
     });
 
     const response = await openai.responses.create({
-      model: process.env.OPENAI_MODEL || "gpt-5.2",
+      model: process.env.gpt-4o-mini || "gpt-5.2",
       input: [
         {
           role: "system",
