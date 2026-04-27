@@ -18,16 +18,16 @@ app.post("/generate", async (req, res) => {
       return res.status(400).json({ error: "Reviewer text is required." });
     }
 
-    if (!process.env.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) {
+    if (!process.env.OPENAI_API_KEY) {
       return res.status(500).json({ error: "OPENAI_API_KEY is not set on the server." });
     }
 
     const openai = new OpenAI({
-      apiKey: process.env.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,
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
     const response = await openai.responses.create({
-      model: process.env.gpt-4o-mini || "gpt-5.2",
+      model: process.env.OPENAI_MODEL || "gpt-5.2",
       input: [
         {
           role: "system",
@@ -78,7 +78,7 @@ app.post("/generate", async (req, res) => {
 });
 
 if (process.argv[1] && process.argv[1].toLowerCase() === currentFile.toLowerCase()) {
-  app.listen(port, () => {
+  app.listen(port, "0.0.0.0", () => {
     console.log(`Text to Reviewer is running at http://localhost:${port}`);
   });
 }
